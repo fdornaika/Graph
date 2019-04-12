@@ -1,17 +1,17 @@
-function [W,err,itt] = construct_W_sgls (data,W0,lambda,rho)
+function [W, err, itt] = construct_W_sgls (data,W0,lambda,rho)
 
 %% construct W matrix based on the SGLS criterion
 
 %%Inputs 
-%    data       ==  each observation should be a column
-%    W0         ==  initial rough similarity matrix
-%    lambda, rho ==  balance parameters
+%    data       == Data amtrix where  each observation should be a column
+%    W0         ==  Initial rough similarity matrix (random matrix or KNN graph)
+%    lambda, rho ==  Regularization parameters
 
 
 %%Output
-%   W     ==  similarity matrix
-%   err  ==  matrix norm of graph differences at two consecutive iterations) of iteration
-%   itt  == array that saves the number of iterations of the ADMM
+%   W   ==  Undirected graph matrix
+%   err  ==  Array of graph differences at two consecutive iterations (L2 norm of a matrix)
+%   itt  == Array that saves the number of iterations of the ADMM at each external ieration
 
 
 
@@ -35,7 +35,6 @@ B_pre = W0;
 B_new = zeros(nSmp);
 itt = [];
 T_th = 1e-4;
-
 
 
 %% main process
