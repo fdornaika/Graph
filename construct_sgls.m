@@ -9,7 +9,7 @@ function [W, err, itt] = construct_W_sgls (data,W0,lambda,rho)
 
 
 %%Output
-%   W   ==  Undirected graph matrix
+%   W   ==  Directed graph matrix
 %   err  ==  Array of graph differences at two consecutive iterations (L2 norm of a matrix)
 %   itt  == Array that saves the number of iterations of the ADMM at each external ieration
 
