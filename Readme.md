@@ -14,6 +14,7 @@ where K is a square matrix that represents the kernel matrix assossiated with th
 
 
 %%Input: 
+
 %    data       ==  Data matrix where  each observation is a column
 
 %    W0         ==  Initial graph matrix
